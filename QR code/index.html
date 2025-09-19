@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<link rel="stylesheet" href="index.css">
+
+<body>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        <input type="text" id="inputText" placeholder="Enter text or URL"><br>
+        <button onclick="qrCode()">Generate QR</button><br>
+
+        <div id="qrcode"></div>
+
+    </div>
+    
+    
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+    function qrCode(){
+        var text = document.getElementById("inputText").value;
+        var qrcodecontainer = document.getElementById("qrcode");
+        qrcodecontainer.innerHTML="";
+    
+        if(text.trim() !==""){
+            new QRCode(qrcodecontainer, {
+                 text:text,
+                 width:150,
+                 height:150,
+                 margin:10
+             })
+        }
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+<!-- <script>
+
+    class idGenerate {
+        constructor(studentname,studentage,studentrollno) {
+            this.Name = studentname;
+            this.Age = studentage;
+            this.RollNo = studentrollno;
+        }
+        printID(){
+            document.writeln(`Name is ${this.Name}, Age is ${this.Age} and Roll Number is ${this.RollNo}.`);
+        }
+        
+    }
+
+    let RoshnaId = new idGenerate("Roshna",24,17);
+    let HariId = new idGenerate("Hari",22,18);
+
+    RoshnaId.printID();
+    HariId.printID();
+</script> -->
+
+</html>
+
